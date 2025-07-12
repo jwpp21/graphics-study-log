@@ -13,8 +13,8 @@
 4. Separable Kernel을 활용해 2차원 블러를 1차원 연산 2번으로 최적화한다.
 
 ## 3. 관련 코드 요약
-```cpp
 ### 수평 blur
+```cpp
 const float weights[5] = { 0.0545f, 0.2442f, 0.4026f, 0.2442f, 0.0545f };
 
 #pragma omp parallel for
@@ -28,8 +28,9 @@ for (int y = 0; y < height; y++) {
         pixelsBuffer[y * width + x] = sum;
     }
 }
----
+```
 ### 수직 blur
+```cpp
 #pragma omp parallel for
 for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
@@ -41,6 +42,7 @@ for (int y = 0; y < height; y++) {
         pixels[y * width + x] = sum;
     }
 }
+```
 ### 코드 요약
 | 요소             | 설명                           |
 | -------------- | ---------------------------- |
