@@ -51,8 +51,8 @@ for (int y = 0; y < height; y++) {
 | `std::clamp()` | 이미지 경계 처리 (Out-of-bounds 방지) |
 | `OpenMP 병렬 처리` | 반복문 병렬화로 성능 향상               |
 
-
-## 느낀점
+---
+## 4. 느낀점
 
 Separable Kernel 개념 덕분에 2D 커널 연산을 1D 연산 2번으로 나눌 수 있어 연산량이 크게 줄어든다.
 
